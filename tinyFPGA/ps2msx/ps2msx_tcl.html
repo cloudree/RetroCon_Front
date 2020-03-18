@@ -1,0 +1,259 @@
+<HTML>
+<HEAD><TITLE>Lattice TCL Log</TITLE>
+<STYLE TYPE="text/css">
+<!--
+ body,pre{    font-family:'Courier New', monospace;    color: #000000;    font-size:88%;    background-color: #ffffff;}h1 {    font-weight: bold;    margin-top: 24px;    margin-bottom: 10px;    border-bottom: 3px solid #000;    font-size: 1em;}h2 {    font-weight: bold;    margin-top: 18px;    margin-bottom: 5px;    font-size: 0.90em;}h3 {    font-weight: bold;    margin-top: 12px;    margin-bottom: 5px;    font-size: 0.80em;}p {    font-size:78%;}P.Table {    margin-top: 4px;    margin-bottom: 4px;    margin-right: 4px;    margin-left: 4px;}table{    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    border-collapse: collapse;}th {    font-weight:bold;    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    text-align:left;    font-size:78%;}td {    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    font-size:78%;}a {    color:#013C9A;    text-decoration:none;}a:visited {    color:#013C9A;}a:hover, a:active {    text-decoration:underline;    color:#5BAFD4;}.pass{background-color: #00ff00;}.fail{background-color: #ff0000;}.comment{    font-size: 90%;    font-style: italic;}
+-->
+</STYLE>
+</HEAD>
+<PRE><A name="pn190806210501"></A><B><U><big>pn190806210501</big></U></B>
+#Start recording tcl command: 8/6/2019 20:41:15
+#Project Location: J:/proj/MSX/ps2msx_lattice; Project name: ps2msx
+prj_project new -name "ps2msx" -impl "impl1" -dev LCMXO2-1200ZE-1SG32I -synthesis "lse"
+prj_project save
+prj_src add "J:/proj/MSX/ps2msx_lattice/ps2Top_MSX.v"
+prj_src add "J:/proj/MSX/ps2msx_lattice/setREG.v" "J:/proj/MSX/ps2msx_lattice/pskeyboard.v" "J:/proj/MSX/ps2msx_lattice/ps2toMSX.v" "J:/proj/MSX/ps2msx_lattice/ps2FSM_MSX.v"
+prj_dev set -part LCMXO2-1200HC-4SG32I
+#Stop recording: 8/6/2019 21:05:01
+
+
+
+<A name="pn190813065148"></A><B><U><big>pn190813065148</big></U></B>
+#Start recording tcl command: 8/11/2019 23:27:35
+#Project Location: J:/proj/MSX/ps2msx_lattice; Project name: ps2msx
+prj_project open "J:/proj/MSX/ps2msx_lattice/ps2msx.ldf"
+eco_config sysio -comp {Y[0]} -pullmode {DOWN} -drive {NA} -slewrate {NA} -clamp {ON} -opendrain {OFF} -diffresistor {OFF} -diffdrive {NA} -bank_vccio {2.5} -hysteresis {SMALL}
+eco_config sysio -comp {RST} -pullmode {DOWN} -drive {NA} -slewrate {NA} -clamp {ON} -opendrain {OFF} -diffresistor {OFF} -diffdrive {NA} -bank_vccio {2.5} -hysteresis {SMALL}
+eco_config sysio -comp {RST} -pullmode {DOWN} -drive {NA} -slewrate {NA} -clamp {ON} -opendrain {OFF} -diffresistor {OFF} -diffdrive {NA} -bank_vccio {2.5} -hysteresis {SMALL}
+eco_config sysio -comp {RST} -pullmode {DOWN} -drive {NA} -slewrate {NA} -clamp {ON} -opendrain {OFF} -diffresistor {OFF} -diffdrive {NA} -bank_vccio {2.5} -hysteresis {SMALL}
+eco_config sysio -comp {RST} -pullmode {DOWN} -drive {NA} -slewrate {NA} -clamp {ON} -opendrain {OFF} -diffresistor {OFF} -diffdrive {NA} -bank_vccio {2.5} -hysteresis {SMALL}
+eco_config sysio -comp {RST} -pullmode {DOWN} -drive {NA} -slewrate {NA} -clamp {ON} -opendrain {OFF} -diffresistor {OFF} -diffdrive {NA} -bank_vccio {2.5} -hysteresis {SMALL}
+eco_config sysio -comp {RST} -pullmode {DOWN} -drive {NA} -slewrate {NA} -clamp {ON} -opendrain {OFF} -diffresistor {OFF} -diffdrive {NA} -bank_vccio {2.5} -hysteresis {SMALL}
+#Stop recording: 8/13/2019 06:51:48
+
+
+
+<A name="pn190908133040"></A><B><U><big>pn190908133040</big></U></B>
+#Start recording tcl command: 9/8/2019 13:23:32
+#Project Location: J:/proj/MSX/ps2msx_lattice; Project name: ps2msx
+prj_project open "J:/proj/MSX/ps2msx_lattice/ps2msx.ldf"
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis -forceAll
+prj_project close
+#Stop recording: 9/8/2019 13:30:40
+
+
+
+<A name="pn190908154954"></A><B><U><big>pn190908154954</big></U></B>
+#Start recording tcl command: 9/8/2019 13:38:52
+#Project Location: J:/proj/MSX/ps2msx_lattice; Project name: ps2msx
+prj_project open "J:/proj/MSX/ps2msx_lattice/ps2msx.ldf"
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis -forceAll
+prj_src add "J:/proj/MSX/ps2msx_lattice/ps2Top_MSX_XO2.v"
+prj_src remove "J:/proj/MSX/ps2msx_lattice/ps2Top_MSX.v"
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis -forceAll
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis -forceAll
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis -forceAll
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis -forceAll
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis -forceAll
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+#Stop recording: 9/8/2019 15:49:54
+
+
+
+<A name="pn190909202538"></A><B><U><big>pn190909202538</big></U></B>
+#Start recording tcl command: 9/8/2019 15:50:20
+#Project Location: J:/proj/MSX/ps2msx_lattice; Project name: ps2msx
+prj_project open "J:/proj/MSX/ps2msx_lattice/ps2msx.ldf"
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis -forceAll
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis -forceAll
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis -forceAll
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+prj_strgy set_value -strategy Strategy1 lse_remove_dup_regs=False
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+prj_strgy set_value -strategy Strategy1 lse_force_gsr=Yes
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+source "J:/proj/MSX/ps2msx_lattice/hdle_generate_tbdeclaration.tcl"
+source "J:/proj/MSX/ps2msx_lattice/hdle_generate_tbtemplate.tcl"
+prj_src add -simulate_only "ps2Top_MSX_XO2_tf.v"
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+prj_strgy set_value -strategy Strategy1 lse_force_gsr=No
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+prj_run Export -impl impl1 -task TimingSimFileVlg -forceAll
+prj_run Map -impl impl1 -task MapVHDLSimFile
+prj_run Map -impl impl1 -task MapVerilogSimFile
+prj_run Map -impl impl1 -task MapVerilogSimFile
+prj_run Map -impl impl1 -task MapVerilogSimFile -forceOne
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis -forceAll
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis -forceOne
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis -forceOne
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis -forceAll
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+#Stop recording: 9/9/2019 20:25:38
+
+
+
+<A name="pn191024041537"></A><B><U><big>pn191024041537</big></U></B>
+#Start recording tcl command: 10/22/2019 21:44:39
+#Project Location: J:/proj/MSX/Retrocon/ps2msx_lattice_retrocon; Project name: ps2msx
+prj_project open "J:/proj/MSX/Retrocon/ps2msx_lattice_retrocon/ps2msx.ldf"
+prj_run Synthesis -impl impl1
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis -forceAll
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis -forceAll
+prj_run Export -impl impl1
+prj_run Export -impl impl1 -forceAll
+#Stop recording: 10/24/2019 04:15:37
+
+
+
+<A name="pn200117183412"></A><B><U><big>pn200117183412</big></U></B>
+#Start recording tcl command: 1/17/2020 18:31:16
+#Project Location: J:/proj/MSX/ps2msx_uploaded; Project name: ps2msx
+prj_project open "J:/proj/MSX/ps2msx_uploaded/ps2msx.ldf"
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+pgr_project save "J:/proj/MSX/ps2msx_uploaded/impl1/impl1.xcf"
+prj_src add -exclude "J:/proj/MSX/ps2msx_uploaded/impl1/impl1.xcf"
+prj_src enable "J:/proj/MSX/ps2msx_uploaded/impl1/impl1.xcf"
+pgr_program run
+pgr_project save "J:/proj/MSX/ps2msx_uploaded/impl1/impl1.xcf"
+prj_project save
+prj_project close
+#Stop recording: 1/17/2020 18:34:12
+
+
+
+<A name="pn200117211548"></A><B><U><big>pn200117211548</big></U></B>
+#Start recording tcl command: 1/17/2020 18:34:44
+#Project Location: J:/proj/MSX/ps2msx_uploaded_Numeric; Project name: ps2msx
+prj_project open "J:/proj/MSX/ps2msx_uploaded_Numeric/ps2msx.ldf"
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+pgr_project open "J:/proj/MSX/ps2msx_uploaded_Numeric/impl1/impl1.xcf"
+pgr_program run
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+pgr_program run
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+pgr_program run
+pgr_project save "J:/proj/MSX/ps2msx_uploaded_Numeric/impl1/impl1.xcf"
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+pgr_program run
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+pgr_program run
+prj_run Synthesis -impl impl1 -task Lattice_Synthesis
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+pgr_program run
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+pgr_program run
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+pgr_program run
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+pgr_program run
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+pgr_program run
+prj_run Export -impl impl1 -task Jedecgen -forceAll
+pgr_program run
+pgr_project save "J:/proj/MSX/ps2msx_uploaded_Numeric/impl1/impl1.xcf"
+prj_project save
+prj_project close
+#Stop recording: 1/17/2020 21:15:48
+
+
+
+<A name="pn200117211707"></A><B><U><big>pn200117211707</big></U></B>
+#Start recording tcl command: 1/17/2020 21:15:56
+#Project Location: J:/proj/MSX/ps2msx_uploaded_Numeric; Project name: ps2msx
+prj_project open "J:/proj/MSX/ps2msx_uploaded_Numeric/ps2msx.ldf"
+pgr_project open "J:/proj/MSX/ps2msx_uploaded_Numeric/impl1/impl1.xcf"
+pgr_program run
+pgr_project save "J:/proj/MSX/ps2msx_uploaded_Numeric/impl1/impl1.xcf"
+prj_project close
+#Stop recording: 1/17/2020 21:17:07
+
+
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</PRE></FONT>
+</BODY>
+</HTML>
