@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name RetroCon-rescue)(type Legacy)(uri ${KIPRJMOD}/RetroCon-rescue.lib)(options "")(descr ""))
+  (lib (name RetroConT-rescue)(type Legacy)(uri ${KIPRJMOD}/RetroConT-rescue.lib)(options "")(descr ""))
+)

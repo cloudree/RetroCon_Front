@@ -701,31 +701,18 @@ Wire Wire Line
 	1150 2750 1700 2750
 Wire Wire Line
 	900  2450 1150 2450
-$Comp
-L Device:C C1
-U 1 1 5DE2CA88
-P 1700 2600
-F 0 "C1" H 1815 2646 50  0000 L CNN
-F 1 "22p" H 1815 2555 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1738 2450 50  0001 C CNN
-F 3 "~" H 1700 2600 50  0001 C CNN
-	1    1700 2600
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	1150 2150 1150 2450
 Connection ~ 1150 2450
-Wire Wire Line
-	1700 2450 2000 2450
 $Comp
 L power:GND #PWR0128
 U 1 1 5DE31365
-P 2000 2450
-F 0 "#PWR0128" H 2000 2200 50  0001 C CNN
-F 1 "GND" V 2005 2322 50  0000 R CNN
-F 2 "" H 2000 2450 50  0001 C CNN
-F 3 "" H 2000 2450 50  0001 C CNN
-	1    2000 2450
+P 2400 2450
+F 0 "#PWR0128" H 2400 2200 50  0001 C CNN
+F 1 "GND" V 2405 2322 50  0000 R CNN
+F 2 "" H 2400 2450 50  0001 C CNN
+F 3 "" H 2400 2450 50  0001 C CNN
+	1    2400 2450
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
@@ -1486,7 +1473,6 @@ F 3 "~" H 1700 2300 50  0001 C CNN
 	1    1700 2300
 	1    0    0    -1  
 $EndComp
-Connection ~ 1700 2450
 Text GLabel 5500 3000 0    50   Input ~ 0
 GNDV
 Text GLabel 7050 3250 0    50   Input ~ 0
@@ -1710,4 +1696,35 @@ Text GLabel 7450 5100 1    50   Input ~ 0
 GNDV
 Text GLabel 8350 5100 1    50   Input ~ 0
 GNDV
+$Comp
+L Device:C_Variable C59
+U 1 1 5E92B413
+P 2100 2600
+F 0 "C59" H 2215 2646 50  0000 L CNN
+F 1 "C_Variable" H 2215 2555 50  0000 L CNN
+F 2 "Capacitor_THT:C_Rect_L7.0mm_W6.5mm_P5.00mm" H 2100 2600 50  0001 C CNN
+F 3 "~" H 2100 2600 50  0001 C CNN
+	1    2100 2600
+	1    0    0    -1  
+$EndComp
+Connection ~ 1700 2450
+$Comp
+L Device:C C1
+U 1 1 5DE2CA88
+P 1700 2600
+F 0 "C1" H 1815 2646 50  0000 L CNN
+F 1 "22p" H 1815 2555 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1738 2450 50  0001 C CNN
+F 3 "~" H 1700 2600 50  0001 C CNN
+	1    1700 2600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2100 2750 1700 2750
+Connection ~ 1700 2750
+Wire Wire Line
+	1700 2450 2100 2450
+Connection ~ 2100 2450
+Wire Wire Line
+	2100 2450 2400 2450
 $EndSCHEMATC

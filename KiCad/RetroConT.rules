@@ -1,0 +1,138 @@
+
+(rules PCB RetroConT
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 3675)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.0)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.0)
+    )
+  )
+  (rule
+    (width 300.0)
+    (clear 250.2)
+    (clear 150.0 (type smd_to_turn_gap))
+    (clear 300.2 (type default_Power))
+    (clear 62.6 (type smd_smd))
+    (clear 300.2 (type smd_Power))
+    (clear 300.2 (type "kicad_default"_Power))
+    (clear 300.2 (type Power_Power))
+  )
+  (padstack "Via[0-1]_800:400_um"
+    (shape
+      (circle F.Cu 800.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 800.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_800:400_um" "Via[0-1]_800:400_um" default
+  )
+  (via 
+    "Via[0-1]_800:400_um-kicad_default" "Via[0-1]_800:400_um" "kicad_default"
+  )
+  (via 
+    "Via[0-1]_800:400_um-Power" "Via[0-1]_800:400_um" Power
+  )
+  (via_rule
+    default "Via[0-1]_800:400_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_800:400_um-kicad_default"
+  )
+  (via_rule
+    Power "Via[0-1]_800:400_um-Power"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 300.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    XTAL1 "Net-(C5-Pad1)" "Net-(C13-Pad1)" "Net-(C17-Pad1)" "RGB_R_IN" "RGB_G_IN" "Net-(C19-Pad1)" XTAL2
+    VBB "Net-(C31-Pad1)" "RGB_B_IN" "Net-(C32-Pad2)" "PSG_C" SND3 "Net-(C33-Pad2)" SND1
+    "Net-(C34-Pad2)" "Net-(C37-Pad1)" "Net-(C37-Pad2)" "PSG_A" "Net-(C43-Pad2)" "Net-(C44-Pad2)" PPISND "Net-(C45-Pad1)"
+    "Net-(C46-Pad2)" "Net-(C46-Pad1)" "Net-(C49-Pad1)" "Net-(C49-Pad2)" "Net-(C50-Pad1)" "Net-(C50-Pad2)" "Net-(C51-Pad1)" "Net-(C51-Pad2)"
+    "Net-(C53-Pad1)" "Net-(C54-Pad1)" "Net-(C54-Pad2)" "Net-(C55-Pad2)" "PSG_B" "Net-(C56-Pad2)" SND2 "Net-(C63-Pad2)"
+    "Net-(C63-Pad1)" "Net-(C64-Pad2)" "Net-(C64-Pad1)" "Net-(C96-Pad2)" "Net-(C97-Pad2)" "Net-(C98-Pad1)" "Net-(D1-Pad1)" "Net-(F1-Pad1)"
+    "Net-(IC1-Pad5)" "Net-(IC1-Pad8)" "Net-(IC1-Pad9)" "Net-(IC1-Pad11)" "Net-(IC1-Pad13)" "Net-(IC1-Pad14)" "Net-(IC1-Pad17)" "Net-(IC1-Pad18)"
+    ADDR0 ADDR4 #CS2 #CS12 "#VDP_CSR" ADDR1 ADDR5 PB4
+    PB0 #ExRESET #CS1 D7 D0 "#SLT_INT" ADDR2 ADDR3
+    ADDR6 ADDR7 D5 D4 RAMA1 TMS ADDR14 #ExRFSH
+    "#VDP_CSW" #ExMERQ D6 TDI D2 D3 RAMA2 RAMA0
+    ADDR15 #ExRD #ExIORQ #ExM1 RAMA4 #RAMCS0 PSGBDIR #ExWR
+    "CK_RTCAL" PSGBC1 D1 "Net-(IC2-Pad33)" "Net-(IC2-Pad35)" #ROMCS RAMA3 #SLT1
+    "#CPU_INT" "#ADDR13_8" #RTCCS "#VDP_INT" #SLT3 PC3 PC1 PC0
+    PB7 PB3 TDO PB1 "Net-(IC2-Pad56)" #SLT2 PC2 TCK
+    PB2 PB6 PB5 #RSTLS "Net-(IC4-Pad12)" "Net-(IC4-Pad13)" "Net-(IC4-Pad14)" PC3LS
+    "Net-(IC4-Pad6)" PC2LS "Net-(IC4-Pad7)" PC1LS "Net-(IC4-Pad8)" PC0LS "Net-(IC6-Pad1)" CLK
+    "Net-(IC6-Pad4)" #ExWAIT "Net-(IC6-Pad6)" "Net-(IC6-Pad8)" ADDR8 ADDR13 ADDR9 ADDR12
+    ADDR10 ADDR11 VD3 VA4 #VCAS1 VA5 VD0 VA6
+    VA3 #VRAS VA2 #VWE VA1 VD1 VA0 VD2
+    VA7 #VCAS0 VD4 VD5 VD6 VD7 "Net-(IC30-Pad12)" "Net-(IC30-Pad9)"
+    IOA5 J1T2 J2T2 IOA4 J1T1 J2T1 IOB6 J2UP
+    J1UP IOA0 J2DN J1DN IOA1 IOA2 J1LT J2LT
+    IOA3 J1RT J2RT "Net-(IC32-Pad12)" IOB1 IOB0 "Net-(IC32-Pad6)" IOB2
+    IOB3 J1OUT #J1OUT J2OUT #J2OUT "Net-(IC33-Pad12)" "Net-(IC33-Pad10)" "Net-(IC33-Pad11)"
+    CPUCLK "Net-(ICPSG1-Pad39)" "Net-(ICPSG1-Pad6)" "Net-(ICPSG1-Pad5)" "Net-(ICPSG1-Pad2)" "SV_Y_OUT" "SV_C_OUT" "CSYNC_OUT"
+    "DIN_3" "Net-(J4-Pad3)" "AUDIO_ROUT" "AUDIO_LOUT" "DIN_5" "YS_OUT" "DIN_2" "DIN_4"
+    "DIN_1" "RGB_R_OUT" "RGB_G_OUT" "RGB_B_OUT" PSDATA PSCLK #ExSLT1 SNDL
+    "Net-(JP4-Pad2)" SNDR "Net-(JP5-Pad2)" "CSYNC_IN" "CV_OUT" "Net-(JP8-Pad2)" "Net-(JP9-Pad2)" "Net-(JP10-Pad2)"
+    "Net-(JP11-Pad2)" "Net-(JP12-Pad2)" #ExSLT2 #ExSLT3 "Net-(LED1-Pad1)" "Net-(LED2-Pad1)" "Net-(LED3-Pad2)" "Net-(R20-Pad1)"
+    "Net-(R21-Pad1)" "Net-(R23-Pad2)" "Net-(R37-Pad2)" "Net-(R38-Pad2)" "Net-(R57-Pad1)" "Net-(R60-Pad1)" "Net-(R61-Pad2)" "Net-(RN1-Pad2)"
+    "Net-(RN2-Pad2)" "Net-(SV1-Pad5)" #ExBUSDIR "Net-(SV1-Pad16)" "Net-(SV1-Pad44)" "Net-(SV1-Pad46)" "Net-(SV2-Pad6)" "Net-(SV2-Pad7)"
+    "Net-(SV2-Pad8)" "Net-(SV4-Pad16)" "Net-(SV4-Pad44)" "Net-(SV4-Pad46)" "Net-(SV4-Pad5)" "Net-(SV8-Pad5)" "Net-(SV8-Pad16)" "Net-(SV8-Pad44)"
+    "Net-(SV8-Pad46)" "Net-(U2-Pad23)" "Net-(U2-Pad18)" RTCADR0 RTCADR1 RTCADR2 RTCADR3 "Net-(U11-Pad3)"
+    "Net-(U11-Pad6)" "Net-(U11-Pad11)" "Net-(U11-Pad14)" "Net-(U$1-Pad2)" "Net-(U$1-Pad3)" "Net-(U$1-Pad5)" "Net-(U$1-Pad59)" "Net-(U$1-Pad7)"
+    "Net-(U$1-Pad10)" "Net-(U$1-Pad11)" "Net-(U$1-Pad12)" "Net-(U$1-Pad13)" "Net-(U$1-Pad14)" "Net-(U$1-Pad15)" "Net-(U$1-Pad16)" "Net-(U$1-Pad17)"
+    "Net-(U$1-Pad18)" "Net-(U$1-Pad19)" "Net-(X1-Pad2)" "Net-(X1-Pad6)" "Net-(X2-Pad3)" "Net-(X5-Pad3)" "Net-(X9-Pad3)" "Net-(SV3-Pad46)"
+    "Net-(SV3-Pad44)" "Net-(SV3-Pad16)" "Net-(SV3-Pad5)" "Net-(J17-Pad2)" "Net-(J17-Pad3)" "Net-(J17-Pad6)" "Net-(J17-Pad7)" "Net-(SW1-Pad3)"
+    "Net-(SW2-Pad3)" "Net-(U7-Pad9)" "Net-(U7-Pad8)" "Net-(U7-Pad19)" "Net-(U7-Pad16)" "Net-(U7-Pad15)" "Net-(U7-Pad14)" "Net-(U7-Pad13)"
+    "Net-(RN1-Pad3)" "Net-(RN2-Pad3)" Q1P9 Q1P8 Q1P7 Q2P9 Q2P8 Q2P7
+    "Net-(F1-Pad2)" "Net-(BT1-Pad1)"
+    (clearance_class "kicad_default")
+    (via_rule kicad_default)
+    (rule
+      (width 300.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class Power
+    GNDA GNDV GNDB GND +5V "VCC_A" "VDD_DAC" +3V3
+    +12V "-12V" VCC2
+    (clearance_class Power)
+    (via_rule Power)
+    (rule
+      (width 400.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)
