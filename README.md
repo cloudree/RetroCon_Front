@@ -1,5 +1,5 @@
 # RetroCon_Front
-Front Pack version of RetroCon (MSX2+ compatible)
+Front Pack version of RetroCon (MSX2 compatible, VDP is V9958)
 * Retrocon is MSX2+ compatible machine made by KevinCho ckevin@hanmail.net
 
 /KiCad : schematics of Kicad
