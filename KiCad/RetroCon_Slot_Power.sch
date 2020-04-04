@@ -652,8 +652,6 @@ F 3 "" H 1100 1000 50  0001 C CNN
 	1    1100 1000
 	1    0    0    -1  
 $EndComp
-NoConn ~ 3550 6350
-NoConn ~ 3050 6850
 $Comp
 L power:GND #PWR?
 U 1 1 5E22DD2D
@@ -1707,8 +1705,6 @@ F 3 "~" H 5300 6550 50  0001 C CNN
 $EndComp
 Text GLabel 6400 6850 3    60   Input ~ 0
 #ExSLT1
-NoConn ~ 6300 6350
-NoConn ~ 5800 6850
 Text GLabel 6500 6350 1    60   Input ~ 0
 #ExCS1
 Text GLabel 6400 6350 1    60   Input ~ 0
@@ -1785,10 +1781,6 @@ Text GLabel 6300 6850 3    60   Input ~ 0
 #ExRFSH
 Text GLabel 6100 6850 3    60   Output ~ 0
 #ExBUSDIR
-NoConn ~ 3100 4200
-NoConn ~ 3600 3700
-NoConn ~ 3100 1600
-NoConn ~ 3600 1100
 $Comp
 L RetroConT-rescue:PUD-0512-cloudree_dcdc U5
 U 1 1 5E577254
@@ -2056,4 +2048,32 @@ Wire Wire Line
 Wire Wire Line
 	9300 2700 9350 2700
 Connection ~ 9300 2300
+Text GLabel 3600 1100 1    50   Input ~ 0
+RSV20
+Text GLabel 3100 1600 3    50   Input ~ 0
+RSV21
+Text GLabel 4150 1100 1    50   Output ~ 0
+RSV20
+Text GLabel 4150 1600 3    50   Output ~ 0
+RSV21
+NoConn ~ 4150 1100
+NoConn ~ 4150 1600
+Text GLabel 3600 3700 1    50   Input ~ 0
+RSV30
+Text GLabel 3100 4200 3    50   Input ~ 0
+RSV31
+Text GLabel 4100 3700 1    50   Output ~ 0
+RSV30
+Text GLabel 4100 4200 3    50   Output ~ 0
+RSV31
+NoConn ~ 4100 3700
+NoConn ~ 4100 4200
+Text GLabel 3550 6350 1    50   Input ~ 0
+RSV10
+Text GLabel 3050 6850 3    50   Input ~ 0
+RSV11
+Text GLabel 5800 6850 3    50   Input ~ 0
+RSV11
+Text GLabel 6300 6350 1    50   Input ~ 0
+RSV10
 $EndSCHEMATC
